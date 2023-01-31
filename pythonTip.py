@@ -138,6 +138,14 @@
 # for index, value in enumerate(a):
 #   print(index,value)
 
+# 튜플 정렬하기
+# 첫 번째 원소로 오름차순 정렬, 내림차순 정렬
+# arr.sort(key = lambda x : x[0])
+# arr.sort(key = lambda x : -x[0])
+# 두 번째 원소로 오름차순 정렬, 내림차순 정렬
+# arr.sort(key = lambda x : x[1])
+# arr.sort(key = lambda x : -x[1])
+
 # # all -> 모두 충족됐을 때
 # if all(60>x for x in a):
 #   print("YES")
