@@ -8,11 +8,11 @@
 # print(a, end=' d')
 
 # a,b = input("숫자를 입력하세요 : ").split()
-# print(a+b)
+
 # c,d = map(int, input("숫자를 입력하세요 : ").split())
 # print(c+d)
 
-# for i in range(10, 0, -1):
+# for i in range(10,1,-1): #[10,9,8,7,6,5,4,3,2,1]
 #   print(i)
 # sep -> 구분자, 글자 사이사이에 끼어넣어줌
 # print('S','E','P', sep='@')
@@ -20,8 +20,8 @@
 # print("I like", end=" ")
 # print("money")
 
-# for i in range(5):
-#   print('i:', i, sep='', end=' ')
+# for i in range(5): # [0,1,2,3,4]
+#   print('i:', i, sep='',end=' ')
 #   for j in range(5):
 #     print('j:', j, sep='', end=' ')
 #   print()
@@ -39,7 +39,9 @@
 # 최빈값을 구할 때 사용되는 함수
 # [1 1 2 2 5] 면 [(1,2), (2,2), (5,1)]로 반환됨
 # from collections import Counter
+# arr=[1,1,2,2,5]
 # m2=Counter(arr).most_common()
+# print(m2)
 
 
 # <시간 복잡도>
@@ -47,27 +49,26 @@
 
 
 # <문자열 함수들>
+
 # upper(),capitalize() (앞글자만)
 # lower()
 # isupper(), islower(), isalpha()
 # list comprehension
-# N=N.replace(i,'*')
 
 # find, count, index..
 
 # msg="It is Time"
-# tmp=msg.upper
+
 # print(msg.find('T'))
 # print(msg.count('T'))
 # # Slice
-# print(msg[:2])
+# print(msg[:2]) 
 # print(msg[3:5])
 
 
 
 
 # 리스트
-
 
 # 0으로 채워진 리스트 만들기
 # a=[0]*5
@@ -95,6 +96,7 @@
 #     print('HelloWorld')
 
 # 리스트 내장함수들
+
 # strarr=['1','2','3']
 # intarr=list(map(int,strarr))
 # arr=[i for i in range(10)]
@@ -138,7 +140,9 @@
 # for index, value in enumerate(a):
 #   print(index,value)
 
+
 # 튜플 정렬하기
+
 # 첫 번째 원소로 오름차순 정렬, 내림차순 정렬
 # arr.sort(key = lambda x : x[0])
 # arr.sort(key = lambda x : -x[0])
@@ -158,12 +162,22 @@
 # else:
 #   print("NO")
 
+# 힙큐 heap
+
+import heapq
+# item을 heap에 추가
+# heapq.heappush(heap,item)
+# heap에서 가장 작은 원소를 pop $ return 비어있는경우 indexError
+# heapq.heappop(heap)
+# 리스트 x를 즉각적으로 heap으로 변환함
+# heapq.heapify(x)
+
+# 람다함수 (익명의 함수, 람다 표현식)
+
+
 # arr.sort(key=lambda x:x[0]) 첫번째 원소 기준
 # arr.sort(key=lambda x:x[1]) 두번째 원소 기준
 # 내림차순은 -x[0], -x[1]
-
-
-# 람다함수 (익명의 함수, 람다 표현식)
 
 # def plus_one(x):
 #   return x+1
@@ -176,7 +190,8 @@
 # print(list(map(plus_one, a)))
 # print(list(map(lambda x: x+1, a)))
 
-# 사전자료형
+# 사전자료형 hash(key, value)
+
 # data=dict()
 # data['사과']='apple'
 # data['바나나']='banana'
@@ -203,7 +218,7 @@
 # print("정답은"+str(answer)+"입니다.")
 # print(f"정답은{answer}입니다")
 
-#조건문 몰랐던 기능
+# 조건문 몰랐던 기능
 # x=15
 # y=[14,15,16]
 # if 0<x<=15:
@@ -231,7 +246,7 @@
 # a,b,c,d=operator(6,4)
 # print(a,b,c,d)
 
-#람다
+# 람다
 # print((lambda a,b:a+b)(3,7))
 # array=[('홍길동',50),('이순신',32),('아무개',74)]
 # def my_key(x):
@@ -244,7 +259,7 @@
 # result=map(lambda a,b:a+b,list1,list2)
 # print(list(result))
 
-#자주 사용되는 라이브러리
+# 자주 사용되는 라이브러리
 # array=[('홍길동',50),('이순신',32),('아무개',74)]
 # result=sorted(array,key=lambda x:x[1],reverse=True)
 # print(result)
