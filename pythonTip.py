@@ -124,6 +124,23 @@
 # arr.sort(reverse=True)
 # print(arr)
 
+# Linked List
+#Node 정의
+# class Node:
+#   def __init__(self,data,next=None):
+#     self.data=data
+#     self.next=next
+
+# node1= Node(1)
+# print(node1.data)
+# print(node1.next)
+# node2=Node(2)
+# node1.next=node2
+# # 가장 맨 앞 Node를 알기 위해 head 지정
+# head=node1
+# print(node1.next.data)
+# print(node1.next)
+
 
 # 튜플
 
