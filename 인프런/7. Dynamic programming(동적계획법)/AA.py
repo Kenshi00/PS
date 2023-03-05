@@ -8,13 +8,15 @@ if __name__=="__main__":
   for i in range(m):
     a,b,c=map(int,input().split())
     dis[a][b]=c
+  # 모든 경우의 수 다 파악됨. 직접 해봄.
   for k in range(1,n+1):
     for i in range(1,n+1):
       for j in range(1,n+1):
         dis[i][j]=min(dis[i][j],dis[i][k]+dis[k][j])
   for i in range(1,n+1):
     for j in range(1,n+1):
-      print(dis[i][j], end=' ')
+      if dis[i][j]==5000:
+        print("M", end=' ')
+      else:
+        print(dis[i][j],end=' ')
     print()
-  # for i in range(1,n+1):
-  #   for j in range(1,n+1):
