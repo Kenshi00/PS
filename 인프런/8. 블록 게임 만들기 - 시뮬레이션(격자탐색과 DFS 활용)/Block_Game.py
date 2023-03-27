@@ -1,12 +1,23 @@
 import turtle as t
 import random as r
 import time
+dy=[-1,0,1,0]
+dx=[0,1,0,-1]
 class Brick():
     def __init__(self):
         self.y=0
         self.x=6
         self.color=r.randint(1,6)
 
+    def move_left(self,grid):
+        if grid[self.y][self.x-1]==0 and grid[self.y+1][self.x-1]==0:
+            grid[self.y][self.x]=0
+            self.x-=1
+
+    def move_right(self,grid):
+        if grid[self.y][self.x+1]==0 and grid[self.y+1][self.x+1]==0:
+            grid[self.y][self.x]=0
+            self.x+=1
 
 def draw_grid(block,grid):
     block.clear()
@@ -20,8 +31,20 @@ def draw_grid(block,grid):
             block.goto(sc_x,sc_y)
             block.color(colors[grid[y][x]])
             block.stamp()
-            
+
+def DFS(y, x, grid, color):
+    global ch,blank
+    ch[y][x]=1
+    blank.append((y,x))
+    for i in range(4):
+        yy=y+dy[i]
+        xx=x+dx[i]
+        if 0<yy<24 and 0<xx<13:
+            if grid[yy][xx]==color and ch[yy][xx]==0:
+                DFS(yy,xx,grid,color)
+
 if __name__=="__main__":
+
     sc=t.Screen()
     sc.tracer(False)
     sc.bgcolor("black")
@@ -45,19 +68,27 @@ if __name__=="__main__":
 
     brick=Brick()
     grid[brick.y][brick.x]=brick.color
-    #draw_grid(block, grid)
+    draw_grid(block, grid)
     
+    sc.onkeypress(lambda: brick.move_left(grid),"Left")
+    sc.onkeypress(lambda: brick.move_right(grid),"Right")
+    sc.listen()
     while True:
         sc.update()
         if grid[brick.y+1][brick.x]==0:
             grid[brick.y][brick.x]=0
             brick.y+=1
             grid[brick.y][brick.x]=brick.color
-        for x in grid:
-            print(x)
-        print()
+        
+        else:
+            ch=[[0]*14 for _ in range(25)]
+            blank=[]
+            DFS(brick.y, brick.x, grid, brick.color)
+            print(len(blank))
+            brick=Brick()
+
         draw_grid(block,grid)
-        time.sleep(0.5)
+        time.sleep(0)
     #draw_grid(block,grid)
 
 
