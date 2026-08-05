@@ -5,11 +5,11 @@ using namespace std;
 
 string solution(string my_string) {
     string answer = "";
-    for(int i = 0; i < my_string.size(); i++)
+    for(auto s : my_string)
     {
-        if(answer.find(my_string[i]) == string::npos)
+        if(answer.find(s) == string::npos)
         {
-            answer += my_string[i];
+            answer += s;
         }
         
     }
