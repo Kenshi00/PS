@@ -1,0 +1,16 @@
+#include <string>
+#include <vector>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string solution(string my_string, int num1, int num2) {
+    string answer = "";
+    for(int i = 0; i < size(my_string); i++)
+    {
+        if(i == num1) answer += my_string[num2];
+        else if(i == num2) answer += my_string[num1];
+        else answer += my_string[i];
+    }
+    return answer;
+}
