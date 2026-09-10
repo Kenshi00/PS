@@ -1,0 +1,19 @@
+#include <string>
+#include <vector>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+vector<int> solution(vector<int> arr, int divisor) {
+    vector<int> answer;
+    for(int i : arr)
+    {
+        if(i % divisor == 0)
+        {
+            answer.push_back(i);
+        }
+    }
+    if(size(answer) == 0) answer.push_back(-1);
+    else sort(answer.begin(), answer.end());
+    return answer;
+}
