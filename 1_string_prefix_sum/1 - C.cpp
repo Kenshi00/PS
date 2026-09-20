@@ -1,4 +1,4 @@
-// 1 - B / 트럭주차
+// 1 - C / 트럭주차
 #include <bits/stdc++.h>
 using namespace std;
 
