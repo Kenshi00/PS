@@ -1,4 +1,6 @@
 // 1 - C / 트럭주차
+// O <= X < O -> 이런식으로 [O,O) 이상,미만으로 설정해야한다.
+
 #include <bits/stdc++.h>
 using namespace std;
 
