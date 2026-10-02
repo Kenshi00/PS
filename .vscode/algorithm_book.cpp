@@ -52,29 +52,69 @@ int main()
 */
 
 
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long ll;
-int main()
-{
-    ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
-    int num;
-    double answer = 0;
-    cin >> num;
-    vector<int> v(num);
-    for(int i = 0; i < num; i++)
-    {
-        cin >> v[i];
-    }
-    sort(v.begin(), v.end());
-    for(double i : v)
-    {
-        cout << i << " ";
-        answer += i;
-    }
-    cout << fixed << setprecision(2) << answer / 5 << "\n";
-    return 0;
-}
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long ll;
+// int main()
+// {
+//     ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+//     int num;
+//     double answer = 0;
+//     cin >> num;
+//     vector<int> v(num);
+//     for(int i = 0; i < num; i++)
+//     {
+//         cin >> v[i];
+//     }
+//     sort(v.begin(), v.end());
+//     for(double i : v)
+//     {
+//         cout << i << " ";
+//         answer += i;
+//     }
+//     cout << fixed << setprecision(2) << answer / 5 << "\n";
+//     return 0;
+// }
+
+
+// combi(조합 함수) : combi(-1, 배열)
+// nCr을 구하는것임
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int n = 3, r = 2;
+// vector<int> v;
+// void print(vector<int> v)
+// {
+//     for(int i : v) cout << i << " ";
+//     cout << '\n';
+// }
+
+// void combi(int start, vector<int> v)
+// {
+//     if(v.size() == r)
+//     {
+//         print(v);
+//         return;
+//     }
+//     else
+//     {
+//         for(int i = start + 1; i < n; i++)
+//         {
+//             v.push_back(i);
+//             combi(i, v);
+//             v.pop_back();
+//         }
+//     }
+// }
+
+// int main()
+// {
+//     ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+//     combi(-1,v);
+//     return 0;
+// }
 
 
 /*
